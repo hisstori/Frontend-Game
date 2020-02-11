@@ -7,26 +7,52 @@ body {
 	background-color: white;
 }
 
-.container {
-	display: grid;
-	grid-template-columns: 200px 200px;
-	grid-gap: 20px 100px;
-	border-radius: 25%;
-	height: 600px;
-	width: 900px;
-	justify-content: center;
-	background-color: black;
+button {
+	height: 50px;
+	width: 100px;
 }
 
+/*Top heading information, 'how to' button.*/
+.information {
+	text-align: center;
+}
+
+/*Displays current round and highest round finished.*/
+.status {
+	margin: auto;
+	text-align: center;
+}
+
+.functions {
+	text-align: center;
+	margin: 10px 20px;
+}
+
+/*Play area holding the Simon buttons.*/
+.container {
+	display: grid;
+	grid-template-columns: 250px 250px;
+	grid-gap: 0 50px;
+	border-radius: 25%;
+	height: 600px;
+	width: 600px;
+	justify-content: center;
+	background-color: black;
+	margin: auto;
+	/*box-shadow: 10px 15px #888888;*/
+}
+
+/*Class for all Simon buttons, the subsequent color ids are for the respective colored button.*/
 .simon {
-	height: 200px;
-	width: 200px;
+	height: 150px;
+	width: 150px;
 	margin: auto;
 	cursor: pointer;
 	border-radius: 15px;
 	padding: 70px;
 }
 
+/*Green button*/
 #green {
 	background-color: #4cbb17;
 	border-radius: 30%;
@@ -34,6 +60,7 @@ body {
 	border: 5px solid green;
 }
 
+/*Red button*/
 #red {
 	background-color: #df0000;
 	border-radius: 30%;
@@ -41,6 +68,7 @@ body {
 	border: 5px solid #ff0000;
 }
 
+/*Yellow button*/
 #yellow {
 	background-color: #fffa00;
 	border-radius: 30%;
@@ -48,6 +76,7 @@ body {
 	border: 5px solid #ede212;
 }
 
+/*Blue button*/
 #blue {
 	background-color: #0000ce;
 	border-radius: 30%;
