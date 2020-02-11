@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="UTF-8">
 	<title>Simon Says by Ryan</title>
 </head>
@@ -11,15 +12,16 @@
 <!-- Will hold the actual game elements and display for the game board itself. Things to add if time permits, fancier buttons, sound effects. -->
 <body>
 	<div class='container'>
-		<div class='simon'>
-			<button></button>
-			<button></button>
-			<button></button>
-			<button></button>
-		</div>
+		<div class='simon' id='green'></div>
+		<div class='simon' id='red'></div>
+		<div class='simon' id='yellow'></div>
+		<div class='simon' id='blue'></div>
 	</div>
 </body>
 <!-- Start, Reset and **Difficulty** buttons will be pladced here. **Difficulty to be added if time permits. -->
+<div class='functions'>
 <button>Start Game</button>
 <button>Reset</button>
+</div>
+<script type="text/javascript" src="main.js"></script>
 </html>
