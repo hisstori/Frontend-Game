@@ -4,18 +4,22 @@
 /*Create play area with four colored buttons*/
 /*Style start and reset button*/
 
+/*Select all elements on the page and apply this font family.*/
 * {
 	font-family: 'Baloo Bhaina', cursive;
 }
 
+/*Back ground color for body of the page in browser.*/
 body {
 	background-color: white;
-	max-height: 100%;
 }
 
+/*Dimensions for 'how to', 'start' & 'reset' buttons.*/
 button {
 	height: 50px;
 	width: 100px;
+	font-size: 14px;
+	/*border-radius: 30%;*/
 }
 
 /*Top heading information, 'how to' button.*/
@@ -29,9 +33,20 @@ button {
 	text-align: center;
 }
 
+/*The two function buttons below the play area. Labeled with ids below*/
 .functions {
 	text-align: center;
 	margin: 10px 20px;
+}
+
+/*Start button*/
+#start {
+	margin-right: 50px;
+}
+
+/*Reset button*/
+#reset {
+	margin-left: 50px;
 }
 
 /*Play area holding the Simon buttons.*/
@@ -40,7 +55,7 @@ button {
 	grid-template-columns: 250px 250px;
 	grid-gap: 0 10px;
 	border-radius: 25%;
-	height: 600px;
+	height: 500px;
 	width: 600px;
 	justify-content: center;
 	/*background-color: black;*/
