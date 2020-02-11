@@ -3,8 +3,14 @@
 /*Update all buttons with css to show better.*/
 /*Create play area with four colored buttons*/
 /*Style start and reset button*/
+
+* {
+	font-family: 'Baloo Bhaina', cursive;
+}
+
 body {
 	background-color: white;
+	max-height: 100%;
 }
 
 button {
@@ -32,12 +38,12 @@ button {
 .container {
 	display: grid;
 	grid-template-columns: 250px 250px;
-	grid-gap: 0 50px;
+	grid-gap: 0 10px;
 	border-radius: 25%;
 	height: 600px;
 	width: 600px;
 	justify-content: center;
-	background-color: black;
+	/*background-color: black;*/
 	margin: auto;
 	/*box-shadow: 10px 15px #888888;*/
 }
