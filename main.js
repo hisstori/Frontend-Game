@@ -16,3 +16,8 @@ let start = document.querySelector('#start');
 console.log(start);
 let reset = document.querySelector('#reset');
 console.log(reset);
+let simon = document.querySelector('.simon');
+console.log(simon);
+for (let i = 0; i < simon.length; i++) {
+	// console.log(simon[i])
+}

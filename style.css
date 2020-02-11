@@ -19,6 +19,7 @@ button {
 	height: 50px;
 	width: 100px;
 	font-size: 14px;
+	cursor: pointer;
 	/*border-radius: 30%;*/
 }
 
@@ -75,25 +76,40 @@ button {
 
 /*Green button*/
 #green {
-	background-color: #4cbb17;
+	background-color: #005f00;
 	border-radius: 30%;
 	padding: 30px;
-	border: 5px solid green;
+	border: 5px solid #4cbb17;
+}
+
+#green:hover {
+	background-color: #4cbb17;
+	border: 5px solid #005f00;
 }
 
 /*Red button*/
 #red {
-	background-color: #df0000;
+	background-color: #c00000;
 	border-radius: 30%;
 	padding: 30px;
 	border: 5px solid #ff0000;
 }
 
+#red:hover {
+	background-color: #ff0000;
+	border: 5px solid #c00000;
+}
+
 /*Yellow button*/
 #yellow {
-	background-color: #fffa00;
+	background-color: #ede212;
 	border-radius: 30%;
 	padding: 30px;
+	border: 5px solid #fffa00;
+}
+
+#yellow:hover {
+	background-color: #fffa00 ;
 	border: 5px solid #ede212;
 }
 
@@ -103,4 +119,9 @@ button {
 	border-radius: 30%;
 	padding: 30px;
 	border: 5px solid #0059ff;
+}
+
+#blue:hover {
+	background-color: #0059ff;
+	border: 5px solid #0000ce;
 }
