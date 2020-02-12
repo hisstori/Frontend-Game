@@ -14,6 +14,11 @@ body {
 	background-color: white;
 }
 
+/*Paragraph element font size for round display.*/
+p {
+	font-size: 20px;
+}
+
 /*Dimensions for 'how to', 'start' & 'reset' buttons.*/
 button {
 	height: 50px;
@@ -82,6 +87,7 @@ button {
 	border: 5px solid #4cbb17;
 }
 
+/*When mouse hovers over*/
 #green:hover {
 	background-color: #4cbb17;
 	border: 5px solid #005f00;
@@ -95,6 +101,7 @@ button {
 	border: 5px solid #ff0000;
 }
 
+/*When mouse hovers over*/
 #red:hover {
 	background-color: #ff0000;
 	border: 5px solid #c00000;
@@ -108,6 +115,7 @@ button {
 	border: 5px solid #fffa00;
 }
 
+/*When mouse hovers over*/
 #yellow:hover {
 	background-color: #fffa00 ;
 	border: 5px solid #ede212;
@@ -121,6 +129,7 @@ button {
 	border: 5px solid #0059ff;
 }
 
+/*When mouse hovers over*/
 #blue:hover {
 	background-color: #0059ff;
 	border: 5px solid #0000ce;
