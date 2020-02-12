@@ -12,6 +12,7 @@
 let order = [];
 console.log(order);
 let playerOrder = [];
+console.log(playerOrder);
 let round;
 let good;
 let cpuTurn;
@@ -59,6 +60,7 @@ resetButton.addEventListener('click', (event) => {
 	good = false;
 });
 
+//Function that runs the game and through the turns.
 function play() {
 	win = false;
 	order = [];
@@ -93,7 +95,7 @@ function turn () {
 	  	if (order[flash] == 3) three();
 	  	if (order[flash] == 4) four();
 	  	flash++;
-	  }, 200);
+	  }, 400);
 	}
   }
  };
@@ -120,12 +122,12 @@ function turn () {
  }
 
  function clearColor () {
- 	green.style.backgroundColor = '#4cbb17'
- 	green.style.borderColor = '#005f00'
- 	red.style.backgroundColor = '#ff0000'
- 	red.style.borderColor = '#c00000'
- 	yellow.style.backgroundColor = '#fffa00'
- 	yellow.style.borderColor = '#ede212'
+ 	green.style.backgroundColor = '#005f00'
+ 	green.style.borderColor = '#4cbb17'
+ 	red.style.backgroundColor = '#c00000'
+ 	red.style.borderColor = '#ff0000'
+ 	yellow.style.backgroundColor = '#ede212'
+ 	yellow.style.borderColor = '#fffa00'
  	blue.style.backgroundColor = '#0000ce'
  	blue.style.borderColor = '#0059ff'
  }
@@ -144,7 +146,7 @@ function turn () {
  green.addEventListener('click', (event) => {
  	if (on) {
  		playerOrder.push(1);
- 		// check();
+ 		check();
  		one();
  		if (win) {
  			setTimeout(() => {
@@ -157,7 +159,7 @@ function turn () {
  red.addEventListener('click', (event) => {
  	if (on) {
  		playerOrder.push(2);
- 		// check();
+ 		check();
  		one();
  		if (win) {
  			setTimeout(() => {
@@ -170,7 +172,7 @@ function turn () {
  yellow.addEventListener('click', (event) => {
  	if (on) {
  		playerOrder.push(3);
- 		// check();
+ 		check();
  		one();
  		if (win) {
  			setTimeout(() => {
@@ -183,7 +185,7 @@ function turn () {
  blue.addEventListener('click', (event) => {
  	if (on) {
  		playerOrder.push(4);
- 		// check();
+ 		check();
  		one();
  		if (win) {
  			setTimeout(() => {
