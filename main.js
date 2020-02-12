@@ -61,9 +61,8 @@ function play() {
 		order.push(Math.floor(Math.random() * 4) +1);
 	}
 	cpuTurn = true;
-	intervalId = setInterval(turns), 800);
+	intervalId = setInterval(turns), 800;
 	console.log(order)
-}
 
 function turns () {
 	startButton = false;
@@ -79,9 +78,43 @@ function turns () {
 	  clearColor();
 	  setTimeout(() => {
 	  	if (order[flash] == 1) one();
-	  	if (order[flash] == 1) one();
-	  	if (order[flash] == 1) one();
-	  	if (order[flash] == 1) one();
-	  }, one();
+	  	if (order[flash] == 2) two();
+	  	if (order[flash] == 3) three();
+	  	if (order[flash] == 4) four();
+	  	flash++;
+	  }, 200);
 	}
-}
+  }
+ };
+
+
+ one = () => {
+ 	green.style.backgroundColor = '#4cbb17'
+ 	green.style.borderColor = '#005f00'
+ }
+
+ two = () => {
+ 	red.style.backgroundColor = '#ff0000'
+ 	red.style.borderColor = '#c00000'
+ }
+
+ three = () => {
+ 	yellow.style.backgroundColor = '#fffa00'
+ 	yellow.style.borderColor = '#ede212'
+ }
+
+ four = () => {
+ 	blue.style.backgroundColor = '#0000ce'
+ 	blue.style.borderColor = '#0059ff'
+ }
+
+ function clearColor () {
+ 	green.style.backgroundColor = '#4cbb17'
+ 	green.style.borderColor = '#005f00'
+ 	red.style.backgroundColor = '#ff0000'
+ 	red.style.borderColor = '#c00000'
+ 	yellow.style.backgroundColor = '#fffa00'
+ 	yellow.style.borderColor = '#ede212'
+ 	blue.style.backgroundColor = '#0000ce'
+ 	blue.style.borderColor = '#0059ff'
+ }
