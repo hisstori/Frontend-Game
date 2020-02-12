@@ -17,6 +17,7 @@ let cpuTurn
 let intervalId
 let sound = true;
 let win 
+let on
 
 const howButton = document.querySelector('#how')
 console.log(how);
@@ -59,7 +60,7 @@ function play() {
 		order.push(Math.floor(Math.random() * 4) +1);
 	}
 	cpuTurn = true;
-	intervalId = setInterval(turns), 800;
+	intervalId = setInterval(turn, 800);
 	console.log(order)
 
 function turn () {
@@ -190,7 +191,7 @@ function turn () {
 		flash = 0;
 		currentRound.innerHTML = round;
 		intervalId = setInterval(turn, 800)
-	}
+};
 
 	function winGame() {
 		currentRound.innerHTML = '!!YOU WIN!!';  
