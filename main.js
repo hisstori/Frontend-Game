@@ -36,8 +36,6 @@ const startButton = document.querySelector('#start');
 console.log(start);
 const resetButton = document.querySelector('#reset');
 console.log(reset);
-let simon = document.querySelectorAll('.simon');
-console.log(simon);
 
 
 currentRound.innerHTML = '--';
@@ -64,7 +62,7 @@ function play() {
 	intervalId = setInterval(turns), 800;
 	console.log(order)
 
-function turns () {
+function turn () {
 	startButton = false;
 
 	if (flash == turn) {
@@ -104,8 +102,8 @@ function turns () {
  }
 
  four = () => {
- 	blue.style.backgroundColor = '#0000ce'
- 	blue.style.borderColor = '#0059ff'
+ 	blue.style.backgroundColor = '#0059ff'
+ 	blue.style.borderColor = '#0000ce'
  }
 
  function clearColor () {
@@ -118,3 +116,84 @@ function turns () {
  	blue.style.backgroundColor = '#0000ce'
  	blue.style.borderColor = '#0059ff'
  }
+
+ green.addEventListener('click', (event) => {
+ 	if (on) {
+ 		playerOrder.push(1);
+ 		// check();
+ 		one();
+ 		if (win) {
+ 			setTimeout(() => {
+ 				clearColor()
+ 			}, 300);
+ 		}
+ 	}
+ });
+
+ red.addEventListener('click', (event) => {
+ 	if (on) {
+ 		playerOrder.push(2);
+ 		// check();
+ 		one();
+ 		if (win) {
+ 			setTimeout(() => {
+ 				clearColor()
+ 			}, 300);
+ 		}
+ 	}
+ });
+
+ yellow.addEventListener('click', (event) => {
+ 	if (on) {
+ 		playerOrder.push(3);
+ 		// check();
+ 		one();
+ 		if (win) {
+ 			setTimeout(() => {
+ 				clearColor()
+ 			}, 300);
+ 		}
+ 	}
+ });
+
+ blue.addEventListener('click', (event) => {
+ 	if (on) {
+ 		playerOrder.push(4);
+ 		// check();
+ 		one();
+ 		if (win) {
+ 			setTimeout(() => {
+ 				clearColor()
+ 			}, 300);
+ 		}
+ 	}
+ });
+
+ function check() {
+ 	if (playerOrder[playerOrder.length = -1] !== order[playerOrder.length = -1])
+ 		good = false;
+
+ 	if (playerOrder.length == 20 && good) {
+ 		winGame();
+ 	}
+ 	
+ 	if (good == false) {
+ 		currentRound.innerHTML = round;
+ 		clearColor();
+ 	}
+ 	sound = false;
+	}
+	if (round = playerOrder.length && good && win) {
+		round++;
+		playerOrder = [];
+		cpuTurn = true;
+		flash = 0;
+		currentRound.innerHTML = round;
+		intervalId = setInterval(turn, 800)
+	}
+
+	function winGame() {
+		currentRound.innerHTML = '!!YOU WIN!!';  
+		on = false;
+		win = true;
+	}
