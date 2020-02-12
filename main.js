@@ -19,7 +19,7 @@ let cpuTurn;
 let intervalId;
 let flash;
 let sound = true;
-let on = false;
+// let on = false;
 let win;
 
 //Constant variables to be used that have value in HTML
@@ -51,6 +51,7 @@ startButton.addEventListener('click', (event) => {
 	play();
 });
 
+//This will completely stop and reset the current play area.
 resetButton.addEventListener('click', (event) => {
 	win = false;
 	order = [];
@@ -58,6 +59,8 @@ resetButton.addEventListener('click', (event) => {
 	flash = 0;
 	currentRound.innerHTML = '--';
 	good = false;
+	clearColor();
+	clearInterval(intervalId);
 });
 
 //Function that runs the game and through the turns.
@@ -77,14 +80,14 @@ function play() {
 	intervalId = setInterval(turn, 800);
 	console.log(order)
 
+//Exchanges turns between the the computer and the user.
 function turn () {
-	// startButton = true;
 
 	if (flash == turn) {
 		clearInterval(intervalId);
 		cpuTurn = false;
 		clearColor();
-		on = false;
+		// on = true;
 	}
 
 	if (cpuTurn) {
@@ -100,27 +103,31 @@ function turn () {
   }
  };
 
-
+//Flashes green button on press.
  one = () => {
  	green.style.backgroundColor = '#4cbb17'
  	green.style.borderColor = '#005f00'
  }
 
+//Flashes red button on press.
  two = () => {
  	red.style.backgroundColor = '#ff0000'
  	red.style.borderColor = '#c00000'
  }
 
+//Flashes yellow button on press.
  three = () => {
  	yellow.style.backgroundColor = '#fffa00'
  	yellow.style.borderColor = '#ede212'
  }
 
+//Flashes blue button on press.
  four = () => {
  	blue.style.backgroundColor = '#0059ff'
  	blue.style.borderColor = '#0000ce'
  }
 
+//Resets the button to original color, no flash.
  function clearColor () {
  	green.style.backgroundColor = '#005f00'
  	green.style.borderColor = '#4cbb17'
@@ -132,6 +139,7 @@ function turn () {
  	blue.style.borderColor = '#0059ff'
  }
 
+//Flashses ALL colors on WIN.
  function flashColor () {
  	green.style.backgroundColor = '#4cbb17'
  	green.style.borderColor = '#005f00'
@@ -144,56 +152,56 @@ function turn () {
  }
 
  green.addEventListener('click', (event) => {
- 	if (on) {
+ 	// if () {
  		playerOrder.push(1);
  		check();
  		one();
  		if (win) {
  			setTimeout(() => {
  				clearColor()
- 			}, 300);
+ 			}, 400);
  		}
- 	}
- });
+ 	})
+ // });
 
  red.addEventListener('click', (event) => {
- 	if (on) {
+ 	// if () {
  		playerOrder.push(2);
  		check();
  		one();
  		if (win) {
  			setTimeout(() => {
  				clearColor()
- 			}, 300);
+ 			}, 400);
  		}
- 	}
- });
+ 	})
+ // });
 
  yellow.addEventListener('click', (event) => {
- 	if (on) {
+ 	// if () {
  		playerOrder.push(3);
  		check();
  		one();
  		if (win) {
  			setTimeout(() => {
  				clearColor()
- 			}, 300);
+ 			}, 400);
  		}
- 	}
- });
+ 	})
+ // });
 
  blue.addEventListener('click', (event) => {
- 	if (on) {
+ 	// if () {
  		playerOrder.push(4);
  		check();
  		one();
  		if (win) {
  			setTimeout(() => {
  				clearColor()
- 			}, 300);
+ 			}, 400);
  		}
- 	}
- });
+ 	})
+ // });
 
  function check() {
  	if (playerOrder[playerOrder.length = -1] !== order[playerOrder.length = -1])
@@ -222,7 +230,7 @@ function turn () {
 	function winGame() {
 		function flashColor() {
 		currentRound.innerHTML = '!!YOU WIN!!';  
-		on = false;
+		// on = false;
 		win = true;
 	}
 };
