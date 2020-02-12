@@ -83,7 +83,7 @@ function play() {
 //Exchanges turns between the the computer and the user.
 function turn () {
 
-	if (flash == turn) {
+	if (flash == round) {
 		clearInterval(intervalId);
 		cpuTurn = false;
 		clearColor();
@@ -98,7 +98,7 @@ function turn () {
 	  	if (order[flash] == 3) three();
 	  	if (order[flash] == 4) four();
 	  	flash++;
-	  }, 400);
+	  }, 200);
 	}
   }
  };
@@ -159,7 +159,7 @@ function turn () {
  		if (win) {
  			setTimeout(() => {
  				clearColor()
- 			}, 400);
+ 			}, 300);
  		}
  	})
  // });
@@ -168,11 +168,11 @@ function turn () {
  	// if () {
  		playerOrder.push(2);
  		check();
- 		one();
+ 		two();
  		if (win) {
  			setTimeout(() => {
  				clearColor()
- 			}, 400);
+ 			}, 300);
  		}
  	})
  // });
@@ -181,11 +181,11 @@ function turn () {
  	// if () {
  		playerOrder.push(3);
  		check();
- 		one();
+ 		three();
  		if (win) {
  			setTimeout(() => {
  				clearColor()
- 			}, 400);
+ 			}, 300);
  		}
  	})
  // });
@@ -194,17 +194,17 @@ function turn () {
  	// if () {
  		playerOrder.push(4);
  		check();
- 		one();
+ 		four();
  		if (win) {
  			setTimeout(() => {
  				clearColor()
- 			}, 400);
+ 			}, 300);
  		}
  	})
  // });
 
  function check() {
- 	if (playerOrder[playerOrder.length = -1] !== order[playerOrder.length = -1])
+ 	if (playerOrder[playerOrder.length -1] !== order[playerOrder.length -1])
  		good = false;
 
  	if (playerOrder.length == 20 && good) {
@@ -212,12 +212,15 @@ function turn () {
  	}
  	
  	if (good == false) {
- 		currentRound.innerHTML = round;
+ 		currentRound.innerHTML = 'Failed round ' 
+ 		+ round  + ' ';
  		clearColor();
  	}
 
  	sound = false;
+ 	
 	}
+
 	if (round = playerOrder.length && good && win) {
 		round++;
 		playerOrder = [];
