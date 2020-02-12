@@ -8,17 +8,20 @@
 //==============================================
 //==============================================
 
+//Created variables to be used in JS
 let order = [];
-console.log(order)
+console.log(order);
 let playerOrder = [];
-let round 
-let good
-let cpuTurn
-let intervalId
+let round;
+let good;
+let cpuTurn;
+let intervalId;
+let flash;
 let sound = true;
-let win 
-let on
+let on = false;
+let win;
 
+//Constant variables to be used that have value in HTML
 const howButton = document.querySelector('#how')
 console.log(how);
 const currentRound = document.querySelector('#current');
@@ -38,14 +41,23 @@ console.log(start);
 const resetButton = document.querySelector('#reset');
 console.log(reset);
 
-
+//Displays current round that the user is actively participating in.
+//Displays highest completed round OR total number of WINs. (TBD)
 currentRound.innerHTML = '--';
 highRound.innerHTML = '--';
 
-// clearColor()
-// clearInterval(intervalID)
+startButton.addEventListener('click', (event) => {
+	play();
+});
 
-// startButton.addEventListener('click', (event) =>)
+resetButton.addEventListener('click', (event) => {
+	win = false;
+	order = [];
+	playerOrder = [];
+	flash = 0;
+	currentRound.innerHTML = '--';
+	good = false;
+});
 
 function play() {
 	win = false;
@@ -64,13 +76,13 @@ function play() {
 	console.log(order)
 
 function turn () {
-	startButton = false;
+	// startButton = true;
 
 	if (flash == turn) {
 		clearInterval(intervalId);
 		cpuTurn = false;
 		clearColor();
-		on = true;
+		on = false;
 	}
 
 	if (cpuTurn) {
@@ -108,6 +120,17 @@ function turn () {
  }
 
  function clearColor () {
+ 	green.style.backgroundColor = '#4cbb17'
+ 	green.style.borderColor = '#005f00'
+ 	red.style.backgroundColor = '#ff0000'
+ 	red.style.borderColor = '#c00000'
+ 	yellow.style.backgroundColor = '#fffa00'
+ 	yellow.style.borderColor = '#ede212'
+ 	blue.style.backgroundColor = '#0000ce'
+ 	blue.style.borderColor = '#0059ff'
+ }
+
+ function flashColor () {
  	green.style.backgroundColor = '#4cbb17'
  	green.style.borderColor = '#005f00'
  	red.style.backgroundColor = '#ff0000'
@@ -182,6 +205,7 @@ function turn () {
  		currentRound.innerHTML = round;
  		clearColor();
  	}
+
  	sound = false;
 	}
 	if (round = playerOrder.length && good && win) {
@@ -194,7 +218,9 @@ function turn () {
 };
 
 	function winGame() {
+		function flashColor() {
 		currentRound.innerHTML = '!!YOU WIN!!';  
 		on = false;
 		win = true;
 	}
+};

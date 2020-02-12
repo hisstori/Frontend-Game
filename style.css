@@ -134,3 +134,23 @@ button {
 	background-color: #0059ff;
 	border: 5px solid #0000ce;
 }
+
+/*===================================*/
+/*======Modal for Instructions======*/
+/*=================================*/
+
+/*Element ID to be manipulated*/
+#how {
+
+}
+
+/*Hidden background information for modal pop-up*/
+.modal {
+
+}
+
+/*Actual modal display with text instructions*/
+/*I want to add a small video to diplay how to play for visual learners*/
+.modal-content {
+
+}
