@@ -229,6 +229,9 @@ function turn () {
  	if (good == false) {
  		currentRound.innerHTML = 'Failed round ' 
  		+ round  + ' ';
+ 		alert("Game Over, please press reset and try again!");
+ 		game = false;
+ 		// gameOver.play();
  		clearColor();
  	}
 
