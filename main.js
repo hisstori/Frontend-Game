@@ -19,10 +19,10 @@ let cpuTurn;
 let intervalId;
 let flash;
 let sound = true;
-// let on = false;
 let win;
-
+let game = false;
 //Constant variables to be used that have value in HTML
+
 const howButton = document.querySelector('#how')
 console.log(how);
 const currentRound = document.querySelector('#current');
@@ -38,9 +38,9 @@ console.log(yellow);
 const blue = document.querySelector('#blue');
 console.log(blue);
 const startButton = document.querySelector('#start');
-console.log(start);
+console.log(startButton);
 const resetButton = document.querySelector('#reset');
-console.log(reset);
+console.log(resetButton);
 
 //Displays current round that the user is actively participating in.
 //Displays highest completed round OR total number of WINs. (TBD)
@@ -56,6 +56,7 @@ resetButton.addEventListener('click', (event) => {
 	win = false;
 	order = [];
 	playerOrder = [];
+	game = false;
 	flash = 0;
 	currentRound.innerHTML = '--';
 	good = false;
@@ -65,6 +66,7 @@ resetButton.addEventListener('click', (event) => {
 
 //Function that runs the game and through the turns.
 function play() {
+	game = true;
 	win = false;
 	order = [];
 	playerOrder = [];
@@ -73,21 +75,24 @@ function play() {
 	round = 1;
 	currentRound.innerHTML = 1;
 	good = true;
-	for (var i = 0; i < 20; i++) {
+	for (let i = 0; i < 20; i++) {
 		order.push(Math.floor(Math.random() * 4) +1);
 	}
 	cpuTurn = true;
+
 	intervalId = setInterval(turn, 800);
 	console.log(order)
+}
 
 //Exchanges turns between the the computer and the user.
 function turn () {
+	game = false;
 
 	if (flash == round) {
 		clearInterval(intervalId);
 		cpuTurn = false;
 		clearColor();
-		// on = true;
+		game = true;
 	}
 
 	if (cpuTurn) {
@@ -100,8 +105,7 @@ function turn () {
 	  	flash++;
 	  }, 200);
 	}
-  }
- };
+  };
 
 //Flashes green button on press.
  one = () => {
@@ -147,61 +151,61 @@ function turn () {
  	red.style.borderColor = '#c00000'
  	yellow.style.backgroundColor = '#fffa00'
  	yellow.style.borderColor = '#ede212'
- 	blue.style.backgroundColor = '#0000ce'
- 	blue.style.borderColor = '#0059ff'
+ 	blue.style.backgroundColor = '#0059ff'
+ 	blue.style.borderColor = '#0000ce'
  }
 
  green.addEventListener('click', (event) => {
- 	// if () {
+ 	if (game) {
  		playerOrder.push(1);
  		check();
  		one();
- 		if (win) {
+ 		if (!win) {
  			setTimeout(() => {
- 				clearColor()
+ 				clearColor();
  			}, 300);
  		}
- 	})
- // });
+ 	}
+ });
 
  red.addEventListener('click', (event) => {
- 	// if () {
+ 	if (game) {
  		playerOrder.push(2);
  		check();
  		two();
- 		if (win) {
+ 		if (!win) {
  			setTimeout(() => {
- 				clearColor()
+ 				clearColor();
  			}, 300);
  		}
- 	})
- // });
+ 	}
+ });
 
  yellow.addEventListener('click', (event) => {
- 	// if () {
+ 	if (game) {
  		playerOrder.push(3);
  		check();
  		three();
- 		if (win) {
+ 		if (!win) {
  			setTimeout(() => {
- 				clearColor()
+ 				clearColor();
  			}, 300);
  		}
- 	})
- // });
+ 	}
+ });
 
  blue.addEventListener('click', (event) => {
- 	// if () {
+ 	if (game) {
  		playerOrder.push(4);
  		check();
  		four();
- 		if (win) {
+ 		if (!win) {
  			setTimeout(() => {
- 				clearColor()
+ 				clearColor();
  			}, 300);
  		}
- 	})
- // });
+ 	}
+ });
 
  function check() {
  	if (playerOrder[playerOrder.length -1] !== order[playerOrder.length -1])
@@ -217,11 +221,7 @@ function turn () {
  		clearColor();
  	}
 
- 	sound = false;
- 	
-	}
-
-	if (round = playerOrder.length && good && win) {
+	if (round == playerOrder.length && good && !win) {
 		round++;
 		playerOrder = [];
 		cpuTurn = true;
@@ -233,7 +233,7 @@ function turn () {
 	function winGame() {
 		function flashColor() {
 		currentRound.innerHTML = '!!YOU WIN!!';  
-		// on = false;
 		win = true;
 	}
+  }
 };

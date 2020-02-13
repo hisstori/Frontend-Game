@@ -71,7 +71,7 @@ button {
 
 /*Class for all Simon buttons, the subsequent color ids are for the respective colored button.*/
 .simon {
-	height: 150px;
+	height: 150px; 
 	width: 150px;
 	margin: auto;
 	cursor: pointer;
