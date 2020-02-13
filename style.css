@@ -25,7 +25,9 @@ button {
 	width: 100px;
 	font-size: 14px;
 	cursor: pointer;
-	/*border-radius: 30%;*/
+	border-radius: 10%;
+	background-color: gold;
+	outline: none;
 }
 
 /*Top heading information, 'how to' button.*/
@@ -87,24 +89,12 @@ button {
 	border: 5px solid #4cbb17;
 }
 
-/*When mouse hovers over*/
-#green:hover {
-	background-color: #4cbb17;
-	border: 5px solid #005f00;
-}
-
 /*Red button*/
 #red {
 	background-color: #c00000;
 	border-radius: 30%;
 	padding: 30px;
 	border: 5px solid #ff0000;
-}
-
-/*When mouse hovers over*/
-#red:hover {
-	background-color: #ff0000;
-	border: 5px solid #c00000;
 }
 
 /*Yellow button*/
@@ -115,12 +105,6 @@ button {
 	border: 5px solid #fffa00;
 }
 
-/*When mouse hovers over*/
-#yellow:hover {
-	background-color: #fffa00 ;
-	border: 5px solid #ede212;
-}
-
 /*Blue button*/
 #blue {
 	background-color: #0000ce;
@@ -128,13 +112,6 @@ button {
 	padding: 30px;
 	border: 5px solid #0059ff;
 }
-
-/*When mouse hovers over*/
-#blue:hover {
-	background-color: #0059ff;
-	border: 5px solid #0000ce;
-}
-
 /*===================================*/
 /*======Modal for Instructions======*/
 /*=================================*/

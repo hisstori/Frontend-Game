@@ -21,8 +21,8 @@ let flash;
 let sound = true;
 let win;
 let game = false;
-//Constant variables to be used that have value in HTML
 
+//Constant variables to be used that have value in HTML
 const howButton = document.querySelector('#how')
 console.log(how);
 const currentRound = document.querySelector('#current');
@@ -41,6 +41,12 @@ const startButton = document.querySelector('#start');
 console.log(startButton);
 const resetButton = document.querySelector('#reset');
 console.log(resetButton);
+
+//Audio files for colors, win and game over.
+let greenTone= new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
+let redTone = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
+let yellowTone = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
+let blueTone = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
 
 //Displays current round that the user is actively participating in.
 //Displays highest completed round OR total number of WINs. (TBD)
@@ -111,24 +117,28 @@ function turn () {
  one = () => {
  	green.style.backgroundColor = '#4cbb17'
  	green.style.borderColor = '#005f00'
+ 	greenTone.play();
  }
 
 //Flashes red button on press.
  two = () => {
  	red.style.backgroundColor = '#ff0000'
  	red.style.borderColor = '#c00000'
+ 	redTone.play();
  }
 
 //Flashes yellow button on press.
  three = () => {
  	yellow.style.backgroundColor = '#fffa00'
  	yellow.style.borderColor = '#ede212'
+ 	yellowTone.play();
  }
 
 //Flashes blue button on press.
  four = () => {
  	blue.style.backgroundColor = '#0059ff'
  	blue.style.borderColor = '#0000ce'
+ 	blueTone.play();
  }
 
 //Resets the button to original color, no flash.
@@ -155,6 +165,7 @@ function turn () {
  	blue.style.borderColor = '#0000ce'
  }
 
+//Button lights up when pressed, 
  green.addEventListener('click', (event) => {
  	if (game) {
  		playerOrder.push(1);
@@ -230,6 +241,7 @@ function turn () {
 		intervalId = setInterval(turn, 800)
 };
 
+//Displays and takes effect after user wins the game.
 	function winGame() {
 		function flashColor() {
 		currentRound.innerHTML = '!!YOU WIN!!';  
