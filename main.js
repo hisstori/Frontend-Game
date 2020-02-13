@@ -8,7 +8,7 @@
 //==============================================
 //==============================================
 
-//Created variables to be used in JS
+// Created variables to be used in JS
 let order = [];
 console.log(order);
 let playerOrder = [];
@@ -41,6 +41,7 @@ const startButton = document.querySelector('#start');
 console.log(startButton);
 const resetButton = document.querySelector('#reset');
 console.log(resetButton);
+const gameOver = document.querySelector('#gameOver')
 
 //Audio files for colors, win and game over.
 let greenTone= new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
@@ -54,7 +55,7 @@ currentRound.innerHTML = '--';
 highRound.innerHTML = '--';
 
 startButton.addEventListener('click', (event) => {
-	play();
+	playGame();
 });
 
 //This will completely stop and reset the current play area.
@@ -71,7 +72,7 @@ resetButton.addEventListener('click', (event) => {
 });
 
 //Function that runs the game and through the turns.
-function play() {
+function playGame() {
 	game = true;
 	win = false;
 	order = [];
@@ -229,9 +230,9 @@ function turn () {
  	if (good == false) {
  		currentRound.innerHTML = 'Failed round ' 
  		+ round  + ' ';
- 		alert("Game Over, please press reset and try again!");
- 		game = false;
  		// gameOver.play();
+ 		game = false;
+ 		alert("Game Over, please press reset and try again!");
  		clearColor();
  	}
 

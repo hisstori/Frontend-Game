@@ -5,10 +5,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina&display=swap" rel="stylesheet">
 	<meta charset="UTF-8">
 	<title>Simon Says by Ryan</title>
-	<audio id='chime1'></audio>
-	<audio id='chime2'></audio>
-	<audio id='chime3'></audio>
-	<audio id='chime4'></audio>
+	<audio>
+		<source src='files/GameOver.wav' type='audio/wav' id='gameOver'>
+	</audio>
 </head>
 <!-- To hold main heading text of game. Insert 'how to play', 'round #'. If time permits, find way to implement difficulty increase and display & track highest round achived. -->
 <div class='information'>
@@ -16,7 +15,7 @@
 <button id='how'>How to play!</button>
 </div>
 <div class='status'>
-<h2>Round: <p id='current'></p>Total Wins: <p id='wins'>9</p>Highest Round Completed: <p id='high'></p></h2>
+<h2>Round: <p id='current'></p>Total Wins: <p id='wins'></p>Highest Round Completed: <p id='high'></p></h2>
 </div>
 <!-- Will hold the actual game elements and display for the game board itself. Things to add if time permits, fancier buttons, sound effects. -->
 <body>
