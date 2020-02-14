@@ -32,6 +32,10 @@ button {
 	outline: none;
 }
 
+button:hover {
+	color: #ffffff;
+}
+
 /*Top heading information, 'how to' button.*/
 .information {
 	text-align: center;

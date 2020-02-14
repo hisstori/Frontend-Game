@@ -10,9 +10,7 @@
 
 // Created variables to be used in JS
 let order = [];
-console.log(order);
 let playerOrder = [];
-console.log(playerOrder);
 let round;
 let good;
 let cpuTurn;
@@ -22,32 +20,23 @@ let sound = true;
 let win;
 let game = false;
 let victory = 0;
+let best = 0;
+let endless = false;
 
 //Constant variables to be used that have value in HTML
 const howButton = document.querySelector('#how')
-console.log(how);
-let wins = document.querySelector('#wins');
-console.log(wins);
+const wins = document.querySelector('#wins');
 const span = document.querySelector('.close');
-console.log(span);
 const currentRound = document.querySelector('#current');
-console.log(current);
 const highRound = document.querySelector('#high');
-console.log(high);
 const green = document.querySelector('#green');
-console.log(green);
 const red = document.querySelector('#red');
-console.log(red);
 const yellow = document.querySelector('#yellow');
-console.log(yellow);
 const blue = document.querySelector('#blue');
-console.log(blue);
 const startButton = document.querySelector('#start');
-console.log(startButton);
 const resetButton = document.querySelector('#reset');
-console.log(resetButton);
 const modal = document.querySelector('.modal');
-console.log(modal);
+const endlessButton = document.querySelector('#endless');
 
 
 
@@ -79,6 +68,10 @@ startButton.addEventListener('click', (event) => {
 	playGame();
 });
 
+endlessButton.addEventListener('click', (event) => {
+	endless = true;
+});
+
 //This will completely stop and reset the current play area.
 resetButton.addEventListener('click', (event) => {
 	win = false;
@@ -88,6 +81,7 @@ resetButton.addEventListener('click', (event) => {
 	flash = 0;
 	currentRound.innerHTML = '--';
 	good = false;
+	endless = false;
 	clearColor();
 	clearInterval(intervalId);
 });
@@ -109,7 +103,6 @@ function playGame() {
 	cpuTurn = true;
 
 	intervalId = setInterval(turn, 800);
-	console.log(order)
 }
 
 //Exchanges turns between the the computer and the user.
@@ -187,7 +180,7 @@ function turn () {
  	blue.style.borderColor = '#0000ce'
  }
 
-//Button lights up when pressed, 
+//Green lights up when pressed, 
  green.addEventListener('click', (event) => {
  	if (game) {
  		playerOrder.push(1);
@@ -200,7 +193,7 @@ function turn () {
  		}
  	}
  });
-
+//Red lights up when pressed.
  red.addEventListener('click', (event) => {
  	if (game) {
  		playerOrder.push(2);
@@ -213,7 +206,7 @@ function turn () {
  		}
  	}
  });
-
+//Yellow lights up when pressed.
  yellow.addEventListener('click', (event) => {
  	if (game) {
  		playerOrder.push(3);
@@ -226,7 +219,7 @@ function turn () {
  		}
  	}
  });
-
+//Blue lights up when pressed.
  blue.addEventListener('click', (event) => {
  	if (game) {
  		playerOrder.push(4);
@@ -239,7 +232,8 @@ function turn () {
  		}
  	}
  });
-
+//Checking the player presses against the computer presses to identify matching sequence. 
+//If sequnce matches, new sequence plays.
  function check() {
  	if (playerOrder[playerOrder.length -1] !== order[playerOrder.length -1])
  		good = false;
@@ -277,6 +271,5 @@ function winGame() {
 		win = true;
 		victory++
 		wins.innerHTML = victory;
-		;
+		alert("Congratulations, you have won!")
 };
-winGame.wins = 0;
