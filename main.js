@@ -25,6 +25,10 @@ let game = false;
 //Constant variables to be used that have value in HTML
 const howButton = document.querySelector('#how')
 console.log(how);
+const wins = document.querySelector('#wins');
+console.log(wins);
+const span = document.querySelector('.close');
+console.log(span);
 const currentRound = document.querySelector('#current');
 console.log(current);
 const highRound = document.querySelector('#high');
@@ -41,8 +45,10 @@ const startButton = document.querySelector('#start');
 console.log(startButton);
 const resetButton = document.querySelector('#reset');
 console.log(resetButton);
-// let gameOver = document.querySelector('#gameover')
-// console.log(gameOver);
+const modal = document.querySelector('.modal');
+console.log(modal);
+
+
 
 //Audio files for colors, win and game over.
 let greenTone= new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
@@ -57,9 +63,14 @@ currentRound.innerHTML = '--';
 highRound.innerHTML = '--';
 
 //Opens modal to display play instructions and win/loss conditions.
-how.addEventListener('click', (event) => {
-	
-})
+how.onclick = function () {
+	modal.style.display = 'inline-block';
+};
+
+//Closes modal when clicking on 'x'.
+span.onclick = function () {
+	modal.style.display = 'none';
+};
 
 //Begins the game of Simon Says.
 startButton.addEventListener('click', (event) => {
