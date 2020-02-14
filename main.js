@@ -98,7 +98,7 @@ function playGame() {
 	round = 1;
 	currentRound.innerHTML = 1;
 	good = true;
-	for (let i = 0; i < 2; i++) {
+	for (let i = 0; i < 5; i++) {
 		order.push(Math.floor(Math.random() * 4) +1);
 	}
 	cpuTurn = true;
@@ -239,7 +239,7 @@ function turn () {
  	if (playerOrder[playerOrder.length -1] !== order[playerOrder.length -1])
  		good = false;
 
- 	if (playerOrder.length == 2 && good) {
+ 	if (playerOrder.length == 5 && good) {
  		winGame();
  	}
  	
@@ -259,6 +259,7 @@ function turn () {
 		cpuTurn = true;
 		flash = 0;
 		currentRound.innerHTML = round;
+		highRound.innerHTML = round;
 		intervalId = setInterval(turn, 800)
 	}
 };
