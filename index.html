@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<title>Simon Says by Ryan</title>
 	<audio>
-		<source src='files/GameOver.wav' type='audio/wav' id='gameOver'>
+		<source src='GameOver.wav' type='audio/wav'>
 	</audio>
 </head>
 <!-- To hold main heading text of game. Insert 'how to play', 'round #'. If time permits, find way to implement difficulty increase and display & track highest round achived. -->
@@ -15,7 +15,7 @@
 <button id='how'>How to play!</button>
 </div>
 <div class='status'>
-<h2>Round: <p id='current'></p>Total Wins: <p id='wins'></p>Highest Round Completed: <p id='high'></p></h2>
+<h2>Round: <p id='current'></p>Total Wins: <p id='wins'>2</p>Highest Round Completed: <p id='high'></p></h2>
 </div>
 <!-- Will hold the actual game elements and display for the game board itself. Things to add if time permits, fancier buttons, sound effects. -->
 <body>
@@ -31,6 +31,17 @@
 <button id='start'>Start Game</button>
 <button id='endless'>Endless</button>
 <button id='reset'>Reset</button>
+</div>
+
+<!--Modal-->
+<div id='modal-content'>
+	<span id='close'>&times;</span>
+	<h3>Rules:</h3>
+	The objective of Simon Says is to follow along with the computer as they select random colors in the play area. Every game will start with the computer selecting a color, the user must then follow along selecting the same exact colors in the same exact order. <br>
+	<h3>Losing the game:</h3>
+	If the user misses a press or presses the wrong color, it is a game over. At that point the user myust hit the reset button and then start again to play the next game of Simon Says.<br>
+	<h3>Winning the game:</h3>
+	If the user can successfully complete 20 rounds the game will end and the user will declared the winner.
 </div>
 <script type="text/javascript" src="main.js"></script>
 </html>

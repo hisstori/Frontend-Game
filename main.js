@@ -41,19 +41,27 @@ const startButton = document.querySelector('#start');
 console.log(startButton);
 const resetButton = document.querySelector('#reset');
 console.log(resetButton);
-const gameOver = document.querySelector('#gameOver')
+// let gameOver = document.querySelector('#gameover')
+// console.log(gameOver);
 
 //Audio files for colors, win and game over.
 let greenTone= new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 let redTone = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
 let yellowTone = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
 let blueTone = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
+let gameOver = new Audio(src = "GameOver.wav");
 
 //Displays current round that the user is actively participating in.
 //Displays highest completed round OR total number of WINs. (TBD)
 currentRound.innerHTML = '--';
 highRound.innerHTML = '--';
 
+//Opens modal to display play instructions and win/loss conditions.
+how.addEventListener('click', (event) => {
+	
+})
+
+//Begins the game of Simon Says.
 startButton.addEventListener('click', (event) => {
 	playGame();
 });
@@ -230,7 +238,7 @@ function turn () {
  	if (good == false) {
  		currentRound.innerHTML = 'Failed round ' 
  		+ round  + ' ';
- 		// gameOver.play();
+ 		gameOver.play();
  		game = false;
  		alert("Game Over, please press reset and try again!");
  		clearColor();
