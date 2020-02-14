@@ -7,6 +7,7 @@ Project 4 - Building a Frontend Game using HTML, CSS &amp; Javascript.
 	3. JavaScript
 
 ## Overview
+
 	1. Game replicates the Simon Says electronic game.
 	2. Grid display was used to set up the play area, with columns holding the colored
 	   panels.
@@ -18,14 +19,18 @@ Project 4 - Building a Frontend Game using HTML, CSS &amp; Javascript.
 	7. Utilized 'if' statements in order to check computer and player sequences for a match.
 
 ## Built With
-	The website and game you are enjoying was built with HTML, CSS and Jqavascript.
-	HTML - The text used.
-	CSS - Used to style.
-	JavaScript - Added all functionality.
+  The website and game you are enjoying was built with HTML, CSS and Jqavascript.
+  HTML - The text used.
+  CSS - Used to style.
+  JavaScript - Added all functionality.
 
 ## Authors
   * Ryan Brown 
 
 ## Acknowledgements
   * SEI 35 cohort
-  * 
+  * Zakk
+  * Shab
+  * Paula
+  * Ren
+  * freecodecamp (Simon panel tones)
