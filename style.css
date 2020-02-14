@@ -17,6 +17,8 @@ body {
 /*Paragraph element font size for round display.*/
 p {
 	font-size: 20px;
+	display: inline;
+	margin: 0 20px 0 20px;
 }
 
 /*Dimensions for 'how to', 'start' & 'reset' buttons.*/
@@ -60,11 +62,11 @@ button {
 /*Play area holding the Simon buttons.*/
 .container {
 	display: grid;
-	grid-template-columns: 250px 250px;
+	grid-template-columns: 200px 200px;
 	grid-gap: 0 10px;
 	border-radius: 25%;
-	height: 500px;
-	width: 600px;
+	height: 400px;
+	width: 500px;
 	justify-content: center;
 	/*background-color: black;*/
 	margin: auto;
@@ -73,8 +75,8 @@ button {
 
 /*Class for all Simon buttons, the subsequent color ids are for the respective colored button.*/
 .simon {
-	height: 150px; 
-	width: 150px;
+	height: 100px; 
+	width: 100px;
 	margin: auto;
 	cursor: pointer;
 	border-radius: 15px;

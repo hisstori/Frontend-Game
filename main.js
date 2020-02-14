@@ -21,11 +21,12 @@ let flash;
 let sound = true;
 let win;
 let game = false;
+let victory = 0;
 
 //Constant variables to be used that have value in HTML
 const howButton = document.querySelector('#how')
 console.log(how);
-const wins = document.querySelector('#wins');
+let wins = document.querySelector('#wins');
 console.log(wins);
 const span = document.querySelector('.close');
 console.log(span);
@@ -61,6 +62,7 @@ let gameOver = new Audio(src = "GameOver.wav");
 //Displays highest completed round OR total number of WINs. (TBD)
 currentRound.innerHTML = '--';
 highRound.innerHTML = '--';
+wins.innerHTML = '--';
 
 //Opens modal to display play instructions and win/loss conditions.
 how.onclick = function () {
@@ -101,7 +103,7 @@ function playGame() {
 	round = 1;
 	currentRound.innerHTML = 1;
 	good = true;
-	for (let i = 0; i < 20; i++) {
+	for (let i = 0; i < 2; i++) {
 		order.push(Math.floor(Math.random() * 4) +1);
 	}
 	cpuTurn = true;
@@ -242,11 +244,12 @@ function turn () {
  	if (playerOrder[playerOrder.length -1] !== order[playerOrder.length -1])
  		good = false;
 
- 	if (playerOrder.length == 20 && good) {
+ 	if (playerOrder.length == 2 && good) {
  		winGame();
  	}
  	
  	if (good == false) {
+ 		flashColor();
  		currentRound.innerHTML = 'Failed round ' 
  		+ round  + ' ';
  		gameOver.play();
@@ -262,13 +265,18 @@ function turn () {
 		flash = 0;
 		currentRound.innerHTML = round;
 		intervalId = setInterval(turn, 800)
+	}
 };
 
 //Displays and takes effect after user wins the game.
-	function winGame() {
-		function flashColor() {
+function winGame() {
+		flashColor();
+		clearColor();
 		currentRound.innerHTML = '!!YOU WIN!!';  
+		game = false;
 		win = true;
-	}
-  }
+		victory++
+		wins.innerHTML = victory;
+		;
 };
+winGame.wins = 0;
