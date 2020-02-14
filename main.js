@@ -46,6 +46,7 @@ let redTone = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
 let yellowTone = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
 let blueTone = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
 let gameOver = new Audio(src = "GameOver.wav");
+let cheer = new Audio(src = "CrowdCheer.mp3")
 
 //Displays current round that the user is actively participating in.
 //Displays highest completed round OR total number of WINs. (TBD)
@@ -271,5 +272,6 @@ function winGame() {
 		win = true;
 		victory++
 		wins.innerHTML = victory;
+		cheer.play();
 		alert("Congratulations, you have won!")
 };
